@@ -26,4 +26,6 @@ EXPOSE 80
 ADD Proyecto-WEB /var/www/site
 ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 
+RUN chmod 777 /var/www/site/php/images
+
 CMD /usr/sbin/apache2ctl -D FOREGROUND
