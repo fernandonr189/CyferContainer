@@ -1,4 +1,11 @@
 <?php
+
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
+    echo "top";
+
     include 'connection.php';
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
@@ -17,7 +24,9 @@
 
 
     require 'vendor/autoload.php';
-    require 'vendor/fpdf/fpdf.php';
+    use Fpdf/Fpdf;
+
+    echo "olamundo";
 
     $pdf=new Fpdf();
     $pdf->AddPage();
@@ -28,6 +37,8 @@
     $pdf->Cell(30,10,'Factura',1,0,'C');
     $pdf->Ln(20);
     $pdf->Cell(60,20, "Gracias por tu compra"." ".$user);
+
+    echo "pdf generado";
 
     while($rows=$result->fetch_assoc()) {
         $pdf->Ln(20);
@@ -59,6 +70,8 @@
     $outlook_mail->Body    = 'Gracias por tu compra!';
     $outlook_mail->AltBody = 'This is the body in plain text for non-HTML mail clients at https://onlinecode.org/';
     $outlook_mail->AddAttachment($file_name, '', $encoding = 'base64', $type = 'application/pdf');
+
+    echo "email enviado";
 
     $sql = mysqli_query($conn, "INSERT INTO USER_PURCHASES (FILENAME, USER_ID) VALUES ('$file_name', '$id')");
     if ($sql -> connect_errno){

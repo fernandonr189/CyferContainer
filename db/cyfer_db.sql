@@ -70,6 +70,31 @@ LOCK TABLES `PRODUCTS` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `SHOPPING_CART`
+--
+
+DROP TABLE IF EXISTS `SHOPPING_CART`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `SHOPPING_CART` (
+  `USER_ID` int(64) NOT NULL,
+  `PRODUCT_ID` int(64) NOT NULL,
+  `AMOUNT` decimal(10,2) NOT NULL,
+  `ID` int(64) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `SHOPPING_CART`
+--
+
+LOCK TABLES `SHOPPING_CART` WRITE;
+/*!40000 ALTER TABLE `SHOPPING_CART` DISABLE KEYS */;
+/*!40000 ALTER TABLE `SHOPPING_CART` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `USERS`
 --
 
@@ -105,4 +130,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-25  5:48:19
+-- Dump completed on 2024-04-26  0:28:18

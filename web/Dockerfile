@@ -1,9 +1,9 @@
-FROM ubuntu:latest
+FROM ubuntu:jammy
 
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get -y install \
-    apache2 php php-mysql libapache2-mod-php curl lynx-common lynx
+    apache2 php php-mysql libapache2-mod-php curl lynx-common lynx git
 
-
+RUN php="$(php -v)" && echo $php
 RUN a2enmod php8.1
 RUN a2enmod rewrite
 
@@ -27,5 +27,9 @@ ADD Proyecto-WEB /var/www/site
 ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 
 RUN chmod 777 /var/www/site/php/images
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+RUN cd /var/www/site/php/ && composer install
 
 CMD /usr/sbin/apache2ctl -D FOREGROUND
