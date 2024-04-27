@@ -120,6 +120,30 @@ INSERT INTO `USERS` VALUES
 ('finr32@gmail.com','Fernando Ismael Navarrete Ruiz','33656340Fer',1);
 /*!40000 ALTER TABLE `USERS` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `USER_PURCHASES`
+--
+
+DROP TABLE IF EXISTS `USER_PURCHASES`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `USER_PURCHASES` (
+  `FILENAME` varchar(128) NOT NULL,
+  `USER_ID` int(64) NOT NULL,
+  `ID` int(64) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `USER_PURCHASES`
+--
+
+LOCK TABLES `USER_PURCHASES` WRITE;
+/*!40000 ALTER TABLE `USER_PURCHASES` DISABLE KEYS */;
+/*!40000 ALTER TABLE `USER_PURCHASES` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -130,4 +154,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-26  0:28:18
+-- Dump completed on 2024-04-27  0:22:37

@@ -24,7 +24,7 @@
 
 
     require 'vendor/autoload.php';
-    use Fpdf/Fpdf;
+    use Fpdf\Fpdf;
 
     echo "olamundo";
 

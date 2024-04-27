@@ -27,6 +27,7 @@ ADD Proyecto-WEB /var/www/site
 ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 
 RUN chmod 777 /var/www/site/php/images
+RUN chmod 777 /var/www/site/php
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
