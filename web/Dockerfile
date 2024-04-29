@@ -26,6 +26,8 @@ EXPOSE 80
 ADD Proyecto-WEB /var/www/site
 ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 
+RUN mkdir /var/www/site/php/images
+
 RUN chmod 777 /var/www/site/php/images
 RUN chmod 777 /var/www/site/php
 
