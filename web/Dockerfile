@@ -1,7 +1,7 @@
 FROM ubuntu:jammy
 
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get -y install \
-    apache2 php php-mysql libapache2-mod-php curl lynx-common lynx git
+    apache2 php php-mysql libapache2-mod-php curl lynx-common lynx git php-curl
 
 RUN php="$(php -v)" && echo $php
 RUN a2enmod php8.1
