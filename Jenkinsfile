@@ -6,14 +6,14 @@ pipeline {
     stages {
         stage('test') {
             agent {
-                dockerfile {
-                    dir 'web'
-                    label 'test'
-                    filename 'Dockerfile'
-                }
+                label 'test'
             }
             steps {
-                sh 'echo docker image built'
+                sh 'rm -rf /home/jenkins/CyFerContainer/*'
+                sh 'rm -rf /home/jenkins/CyFerContainer/.*'
+                sh 'git clone https://github.com/fernandonr189/jenkins-test /home/jenkins/CyFerContainer'
+                sh 'cd /home/jenkins/CyFerContainer'
+                sh 'docker-compose up'
             }
         }
         stage('prod') {
