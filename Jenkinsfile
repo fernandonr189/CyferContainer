@@ -21,8 +21,8 @@ pipeline {
                 label 'prod'
             }
             steps {
-                sh 'rm -rf /home/jenkins/CyFerContainer/*'
-                sh 'rm -rf /home/jenkins/CyFerContainer/.*'
+                sh 'rm -rf /home/jenkins-agent/CyFerContainer/*'
+                sh 'rm -rf /home/jenkins-agent/CyFerContainer/.*'
                 sh 'git clone https://github.com/fernandonr189/jenkins-test /home/jenkins/CyFerContainer'
                 sh 'cd /home/jenkins/CyFerContainer'
                 sh 'docker-compose up -d'
