@@ -13,7 +13,7 @@ pipeline {
                 sh 'rm -rf /home/jenkins/CyFerContainer/.*'
                 sh 'git clone https://github.com/fernandonr189/jenkins-test /home/jenkins/CyFerContainer'
                 sh 'cd /home/jenkins/CyFerContainer'
-                sh 'docker-compose up'
+                sh 'docker-compose up -d'
             }
         }
         stage('prod') {
