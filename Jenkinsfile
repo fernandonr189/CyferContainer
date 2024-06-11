@@ -10,7 +10,7 @@ pipeline {
                     dir 'web'
                 }
             }
-            step {
+            steps {
                 sh 'echo hello world'
             }
         }
