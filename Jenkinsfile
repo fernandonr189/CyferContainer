@@ -9,7 +9,7 @@ pipeline {
                 label 'test'
             }
             steps {
-                sh 'rm -rf /home/jenkins/CyFerContainer && git clone https://github.com/fernandonr189/CyferContainer /home/jenkins/CyferContainer && cd /home/jenkins/CyferContainer && docker-compose up'
+                sh 'sudo rm -rf /home/jenkins/CyFerContainer && git clone https://github.com/fernandonr189/CyferContainer /home/jenkins/CyferContainer && cd /home/jenkins/CyferContainer && docker-compose up'
             }
         }
     }
