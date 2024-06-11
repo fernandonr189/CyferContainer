@@ -4,7 +4,7 @@ pipeline {
     }
 
     stages {
-        stage('test') {
+        stage('deploying in test') {
             agent {
                 label 'test'
             }
@@ -16,16 +16,16 @@ pipeline {
                 sh 'docker-compose up -d'
             }
         }
-        stage('prod') {
+        stage('deploying in production') {
             agent {
-                dockerfile {
-                    dir 'web'
-                    label 'prod'
-                    filename 'Dockerfile'
-                }
+                label 'prod'
             }
             steps {
-                sh 'echo docker image built in prod'
+                sh 'rm -rf /home/jenkins/CyFerContainer/*'
+                sh 'rm -rf /home/jenkins/CyFerContainer/.*'
+                sh 'git clone https://github.com/fernandonr189/jenkins-test /home/jenkins/CyFerContainer'
+                sh 'cd /home/jenkins/CyFerContainer'
+                sh 'docker-compose up -d'
             }
         }
     }
