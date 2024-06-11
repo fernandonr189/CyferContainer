@@ -1,19 +1,17 @@
 pipeline {
     agent {
-        label "docker"
+        label 'docker'
     }
 
     stages {
         stage('test') {
             agent {
-                dockerfile {
-                    filename 'Dockerfile'
-                    label 'test'
-                    dir 'web'
-                }
+                label 'test'
             }
             steps {
-                sh 'echo hello world'
+                sh 'git clone https://github.com/fernandonr189/CyferContainer /home/jenkins/CyferContainer'
+                sh 'cd CyferContainer'
+                sh 'docker-compose up'
             }
         }
     }
