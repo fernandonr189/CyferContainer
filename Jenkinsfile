@@ -10,7 +10,7 @@ pipeline {
             }
             steps {
                 sh 'git clone https://github.com/fernandonr189/CyferContainer /home/jenkins/CyferContainer'
-                sh 'cd CyferContainer'
+                sh 'cd /home/jenkins/CyferContainer'
                 sh 'docker-compose up'
             }
         }
