@@ -10,6 +10,9 @@ pipeline {
                     dir 'web'
                 }
             }
+            step {
+                sh 'echo hello world'
+            }
         }
     }
 }
