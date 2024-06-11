@@ -4,11 +4,11 @@ pipeline {
     }
 
     stages {
-        stage('frontend') {
+        stage('test') {
             agent {
                 dockerfile {
                     filename 'Dockerfile'
-                    label 'prod'
+                    label 'test'
                     dir 'web'
                 }
             }
