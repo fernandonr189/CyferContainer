@@ -26,6 +26,7 @@ pipeline {
                 sh 'git clone https://github.com/fernandonr189/jenkins-test /home/jenkins-agent/CyFerContainer'
                 sh 'cd /home/jenkins-agent/CyFerContainer'
                 sh 'docker-compose up -d'
+                sh 'echo done!'
             }
         }
     }
