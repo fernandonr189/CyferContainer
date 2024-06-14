@@ -9,10 +9,10 @@ pipeline {
                 label 'test'
             }
             steps {
-                sh 'rm -rf /home/jenkins-agent/CyFerContainer/*'
-                sh 'rm -rf /home/jenkins-agent/CyFerContainer/.*'
-                sh 'git clone https://github.com/fernandonr189/jenkins-test /home/jenkins-agent/CyFerContainer'
-                sh 'cd /home/jenkins-agent/CyFerContainer'
+                sh 'rm -rf /home/$USER/CyFerContainer/*'
+                sh 'rm -rf /home/$USER/CyFerContainer/.*'
+                sh 'git clone https://github.com/fernandonr189/jenkins-test /home/$USER/CyFerContainer'
+                sh 'cd /home/$USER/CyFerContainer'
                 sh 'docker-compose up -d'
             }
         }
@@ -21,10 +21,10 @@ pipeline {
                 label 'prod'
             }
             steps {
-                sh 'rm -rf /home/jenkins-agent/CyFerContainer/*'
-                sh 'rm -rf /home/jenkins-agent/CyFerContainer/.*'
-                sh 'git clone https://github.com/fernandonr189/jenkins-test /home/jenkins-agent/CyFerContainer'
-                sh 'cd /home/jenkins-agent/CyFerContainer'
+                sh 'rm -rf /home/$USER/CyFerContainer/*'
+                sh 'rm -rf /home/$USER/CyFerContainer/.*'
+                sh 'git clone https://github.com/fernandonr189/jenkins-test /home/$USER/CyFerContainer'
+                sh 'cd /home/$USER/CyFerContainer'
                 sh 'docker-compose up -d'
                 sh 'echo done!'
             }
