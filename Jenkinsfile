@@ -11,7 +11,7 @@ pipeline {
             steps {
                 sh 'rm -rf /home/$USER/CyFerContainer/*'
                 sh 'rm -rf /home/$USER/CyFerContainer/.*'
-                sh 'git clone https://github.com/fernandonr189/jenkins-test /home/$USER/CyFerContainer'
+                sh 'git clone https://github.com/fernandonr189/CyferContainer.git /home/$USER/CyFerContainer'
                 sh 'cd /home/$USER/CyFerContainer'
                 sh 'docker-compose up -d'
             }
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 sh 'rm -rf /home/$USER/CyFerContainer/*'
                 sh 'rm -rf /home/$USER/CyFerContainer/.*'
-                sh 'git clone https://github.com/fernandonr189/jenkins-test /home/$USER/CyFerContainer'
+                sh 'git clone https://github.com/fernandonr189/CyferContainer.git /home/$USER/CyFerContainer'
                 sh 'cd /home/$USER/CyFerContainer'
                 sh 'docker-compose up -d'
                 sh 'echo done!'
